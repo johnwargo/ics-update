@@ -276,11 +276,17 @@ function processICSFile(icsFilePath) {
   //=================================================================
   // Now launch the .ics file we just updated
   //=================================================================
-  console.log("Launching %s", outputFile);
+  console.log("Launching %s", outputFile);  
+  var cmdStr;
+  if (isWindows) {
+    cmdStr = "start " + outputFile;
+  } else {
+    cmdStr = "open " + outputFile;
+  }
+  console.log("Launch command: '%s'", cmdStr);
   var child;
-  child = exec("open " + outputFile, function (error, stdout, stderr) {
-    sys.print('stdout: ' + stdout);
-    sys.print('stderr: ' + stderr);
+  //Todo: figure out how to do this synchronously so the "All Done" message doesnt' appear on failure
+  child = exec(cmdStr, function (error, stdout, stderr) {
     if (error !== null) {
       console.log("\nexec error: %s\n".error, error);
       process.exit(1);
@@ -304,11 +310,6 @@ if (debugMode) {
 
 //Are we running on Windows? It matters for some things
 var isWindows = (os.type().indexOf('Win') === 0);
-if (isWindows) {
-  //Todo: Test this on Windows
-  console.log("\nThis application is currently only supported on Macintosh OS X\n".error);
-  process.exit(1);
-}
 
 //=================================================================
 //First lets sort out the command line arguments
