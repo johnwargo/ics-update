@@ -23,7 +23,7 @@ That's it.
 
 In reality, I don't expect that you will want to regularly open a terminal window to make a meeting invite, so what my colleague did was use the Macintosh OS X Automator program to make an application or a service you can launch to execute the command (with the appropriate .ics file path and so on). This makes it easier (and more visual) to execute this when needed. On Windows, once I've confirmed this will work on Windows, you can easily craft a batch file that launches the module with the appropriate command line parameter(s).
 
-What this approach supports is
+What this approach supports is the ability to create multiple shortcuts or services that each 'launches' a different meeting invite. Then you could have one for phone calls, another for online meetings, or one for internal or another for external meetings. Consultants who support multiple customers, could have a separate ics file for each dial-in service used by their customers.
 
 
 Installation
