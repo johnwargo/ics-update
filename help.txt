@@ -1,0 +1,27 @@
+The module takes an existing iCalendar (.ics) file, updates it and uses
+the system's shell to launch it using the default application. This allows
+users to send the meeting request using their default calendar client. 
+
+Create an appointment, populate the subject, body fields plus any other
+ones you want pre-populated then export it as an .ics file to your 
+system's local hard drive. I recommend putting it in your Documents or 
+Home folder.
+
+    ics-update path_to_ics_file
+
+The path_to_ics_file is a parameter that specifies a file path to a valid
+.ics file. For example, if the .ics file was a file called call.ics 
+located in the user's Documents folder, you could process the file using
+the following command:
+
+    ics-update /Users/user_name/Documents/call.ics
+    
+The file path pointing to the .ics file can be absolute or relative, the 
+following work as well:
+
+    ics-update ../test/call.ics
+    
+if the .ics file is in the user's home folder, you can simply pass the 
+file name to the call to make-ics:
+
+    ics-update ics_file_name.ics
