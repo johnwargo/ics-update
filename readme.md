@@ -70,5 +70,9 @@ if the .ics file is in the user's home folder, you can simply pass the file name
 
 When the module sees that it only has a file name, it builds a full path using the home folder and looks for the file there.
 
+Known Limitations
+=================
+I wasn't able to get exec to operate synchronously, so at the very end of the script, when it's launching the .ics file, you may see the All Done message before any shell errors appear. It looks like a future version of Node will be adding synchronous exec, so I'll 'fix' this then.
+
 ***
 By [John M. Wargo](http://www.johnwargo.com) - if you like and/or use this module, why not pick up [one of my books](http://www.johnwargobooks.com)?
