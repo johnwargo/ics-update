@@ -1,17 +1,20 @@
 {
   "name": "ics-update",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Node module for updating an .ics file and launching it",
   "main": "ics-update.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/johnwargo/ics-update.git"
   },
+  "bin": {
+    "-ics-update": "ics-update.js"
+  },
   "keywords": [
     "ICS",
     "Calendar"
   ],
-  "author": "John M. Wargo",
+    "author": "John M. Wargo <john@johnwargo.com> (http://www.johnwargo.com/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/johnwargo/ics-update/issues"
