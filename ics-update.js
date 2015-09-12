@@ -19,7 +19,7 @@ var exec = require('child_process').exec;
 var fs = require('fs');
 var os = require('os');
 var path = require('path');
-var sys = require('sys');
+//var sys = require('sys');
 var uid = require('node-uuid');
 
 colors.setTheme({
@@ -315,8 +315,8 @@ var isWindows = (os.type().indexOf('Win') === 0);
 //First lets sort out the command line arguments
 //=================================================================
 var userArgs;
-//Is the first item 'node'? then we're testing
-if (process.argv[0].toLowerCase() == 'node') {
+//Is the first item 'node'? then we're testing or running under node V4 or higher
+if (process.argv[0].toLowerCase() === 'node' || process.argv[0].indexOf('node.exe') > -1) {
   //whack the first two items off of the list of arguments
   //This removes the node entry as well as the module name entry (the
   //program we're running)
@@ -329,10 +329,10 @@ if (process.argv[0].toLowerCase() == 'node') {
 //now parse the command line options
 var numArgs = userArgs.length;
 if (numArgs > 0) {
-  //First paranater is the file path we need
+  //First parameter is the file path we need
   processICSFile(userArgs[0]);
 } else {
-  //Missing command line oarguments
+  //Missing command line arguments
   console.log("\nMissing command-line argument(s)\n".error);
   displayHelp();
 }
