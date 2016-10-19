@@ -10,6 +10,7 @@
   "bin": {
     "ics-update": "ics-update.js"
   },
+  "preferGlobal": true,
   "keywords": [
     "ICS",
     "Calendar"
