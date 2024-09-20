@@ -1,6 +1,6 @@
 {
   "name": "ics-update",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A Node module for updating an .ics file and launching it",
   "main": "ics-update.js",
   "repository": {
